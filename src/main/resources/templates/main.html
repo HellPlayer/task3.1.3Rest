@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Main page</title>
+    <link crossorigin="anonymous"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">User page</a>
+    <span class="navbar-text ml-auto">
+      <form action="/logout" method="post">
+          <button type="submit" class="btn btn-link btn-logout">Logout</button>
+      </form>
+    </span>
+    </div>
+</nav>
+
+<div class="row mt-2">
+    <div class="col-2">
+        <input type="button" class="btn btn-primary btn-block" value="User">
+    </div>
+    <div class="col-9">
+        <div class="container-fluid">
+            <h1>User information page</h1>
+            <div class="container-fluid">
+                <div class="list-group">
+                    <li class="list-group-item">
+                        About user
+                    </li>
+                    <li class="list-group-item">
+                        <div class="card">
+                            <div class="card-block">
+                                <table class="table table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Username</th>
+                                        <th>Password</th>
+                                        <th>E-Mail</th>
+                                        <th>Role</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr class="table-active">
+                                        <td th:text="${user.id}">Id</td>
+                                        <td th:text="${user.username}">username</td>
+                                        <td th:text="${user.password}">password</td>
+                                        <td th:text="${user.email}">email</td>
+                                        <td><span th:each="roles : ${user.getRoles()}"
+                                                  th:text="${roles + ' '}"></span></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+</body>
+</html>
