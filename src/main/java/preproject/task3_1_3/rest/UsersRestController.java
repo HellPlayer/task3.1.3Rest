@@ -1,5 +1,6 @@
 package preproject.task3_1_3.rest;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import preproject.task3_1_3.model.User;
@@ -37,6 +38,7 @@ public class UsersRestController {
         userFromDB.setPassword(user.getPassword());
         userFromDB.setEmail(user.getEmail());
         userFromDB.setRoles(user.getRoles());
+        userRepo.save(userFromDB);
         return userFromDB;
     }
 
