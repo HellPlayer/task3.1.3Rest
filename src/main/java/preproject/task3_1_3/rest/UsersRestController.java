@@ -1,6 +1,5 @@
 package preproject.task3_1_3.rest;
 
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import preproject.task3_1_3.model.User;

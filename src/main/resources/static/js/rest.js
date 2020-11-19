@@ -2,7 +2,6 @@ $(document).ready(function () {
     getUsers();
     addNewUser();
 
-
     function getUsers() {
         fetch("http://localhost:8080/rest/users/", {
             method: "GET"
@@ -141,8 +140,8 @@ $(document).ready(function () {
             let password = document.getElementById('newPassword').value;
             let email = document.getElementById('newEmail').value;
 
-            let roleUser = document.getElementById('USER')
-            let roleAdmin = document.getElementById('ADMIN')
+            let roleUser = document.getElementById('newUSER')
+            let roleAdmin = document.getElementById('newADMIN')
             let rolesArr;
             if (roleAdmin.checked) {
                 rolesArr = [roleAdmin.value]
@@ -187,7 +186,3 @@ $(document).ready(function () {
         }
     }
 });
-
-
-
-
